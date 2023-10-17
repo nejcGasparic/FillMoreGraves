@@ -1,0 +1,24 @@
+version: "3.5"
+services:
+  node-api:
+    container_name: sp-app
+    restart: always
+    ports:
+      - "3000:3000"
+    image: sp-server
+    build: ./
+    environment: # dodano
+      - NODE_ENV=test
+    networks:
+      - sp-network
+  mongo-db:
+    image: mongo
+    container_name: sp-mongo-db
+    ports:
+      - "27017-27019:27017-27019"
+    networks:
+      - sp-network
+networks:
+  sp-network:
+    name: sp-network
+    driver: bridge

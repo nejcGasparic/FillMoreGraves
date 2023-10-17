@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nov sprožilec</title>
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+    ></script>
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+
+    <script src="../js/main.js" defer></script>
+
+</head>
+<body>
+<div id="header"></div>
+<div id="telo" class="mx-5">
+    <h2>Nov sprožilec</h2>
+    <form id="dodaj_sprozilec_forma">
+        <div class="form-row">
+            <div id="ime-sprozilca" class="form-group col-md-4">
+                <label class="font-weight-bold">Ime sprožilca</label>
+                <input type="text" class="form-control" name="ime" id="sprozilec-ime" placeholder="Soprog potrdi smrt" required/>
+            </div>
+
+            <div id="pogoji-za-sprozenje">
+                <h3>Pogoji za sproženje</h3>
+                <p>Sprožilec se sproži šele, ko so izpolnjeni vsi spodaj izbrani pogoji (logični AND).</p>
+
+                <div id="doloceni-dogodki" class="mt-4 zamik">
+                    <h5>Določeni dogodki</h5>
+                    <div id="dolocen-dogodek" class="mt-4">
+                        <input type="checkbox" class="ml-4 odmik" onclick="skrijOdkrij1()" name="dogodek" value="smrti"/> Pogoj se izpolni ob določenem dogodku (npr. smrt, nesreča, izguba spomina, ipd.)
+                        <div id="dolocen-dogodek-body" class="mt-4 zamik2" style="display: none">
+                            <label class="font-weight-bold">Verifikacija</label>
+                            <div id="osmrtnice" class="odmik">
+                                <input type="checkbox" class="ml-4 odmik" value="osmrtnice"/> osmrtnice.si (le v primeru smrti)
+                                <div id="osmrtnice-body" class="zamik2">
+                                    <small class="form-text text-muted">
+                                        Fillmore Graves <strong>enkrat na dan</strong> preverja, če se vaše ime in priimek pojavita na osmrtnice.si.
+                                        Lahko se zgodi, da umre tudi oseba, ki deli vaše ime in priimek, zato vam priporočamo,
+                                        da poleg tega določenega dogodka izberete še en drug pogoj (npr. potek časovnika).
+                                        Ko Fillmore Graves zazna, da je bil na osmrtnice.si dodan vnos z vašim imenom in priimkom,
+                                        vam bomo na vaš elektronski naslov poslali sporočilo.
+                                        Opozarjamo vas, da osmrtnice.si nimajo kompletnih vnosov vseh umrlih oseb v Sloveniji.
+                                    </small>
+                                </div>
+                            </div>
+                            <div id="verifikacija-s-strani-navadnega-uporabnika" class="odmik">
+                                <input type="checkbox" class="ml-4" onclick="skrijOdkrij2()" value="s-strani"/> Verifikacija s strani navadnega uporabnika
+                                <div id="verifikacija-s-strani-navadnega-uporabnika-body" class="mt-4 zamik2" style="display: none">
+                                    <div id="sprozilci-verifikacije" class="odmik">
+                                        <label class="font-weight-bold">Sprožilci verifikacije</label>
+                                        <div id="sprozilci-verifikacije-body" class="odmik">
+                                            <p>
+                                                Tu je kot sprožilni pogoj na voljo le časovnik (timer oz. countdown),
+                                                ki ga morate ponastaviti znotraj spodaj določenega časovnega intervala,
+                                                sicer šteje, da je ta pogoj izpolnjen.
+                                            </p>
+                                            <p>
+                                                Fillmore Graves vam določen čas pred iztekom časovnika pošlje sporočilo na vaš elektronski naslov,
+                                                v katerem se nahaja povezava, s katero ponastavite časovnik.
+                                            </p>
+                                            <div>
+                                                Pogoj se izpolni po
+                                                <input type="number" size="4" min="0" max="10" placeholder="L"/> letih
+                                                <input type="number" size="4" min="0" max="11" placeholder="M"/> mesecih
+                                                <input type="number" size="3" min="0" max="29" placeholder="D"/> dneh
+                                                moje neaktivnosti.
+                                                <span class="vprasaj"
+                                                      title="1 leto = 365 dni
+1 mesec = 30 dni
+Skupaj mora biti do poteka časovnika vsaj en dan">(?)</span>
+                                            </div>
+                                            <div>
+                                                Na elektronski naslov mi pošlji sporočilo za ponastavitev
+                                                <input type="number" size="4" min="0" max="10" placeholder="L"/> leta
+                                                <input type="number" size="4" min="0" max="11" placeholder="M"/> mesecev
+                                                <input type="number" size="3" min="0" max="29" placeholder="D"/> dni
+                                                pred iztekom časovnika.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="verifikatorji" class="odmik">
+                                        <label class="font-weight-bold">Verifikatorji</label>
+                                        <div id="verifikatorji-body">
+                                            <p>
+                                                Ko je izpolnjen zgornji sprožilni pogoj se spodaj izbranim verifikatorjem na elektronsko pošto
+                                                pošlje sporočilo s povezavo, na kateri lahko verifikator dogodek oz. dejstvo potrdi, ali pa tudi ne.
+                                                Verifikatorju se prikaže vaše ime in priimek ter ime sprožilca, zato ga jasno poimenujte
+                                                (npr. "smrt [vaše ime in priimek]").
+                                            </p>
+                                            <p>
+                                                Pogoj se šteje za izpolnjen, ko vsi spodaj izbrani verifikatorji (logični AND) potrdijo, da je prišlo do vaše smrti.
+                                            </p>
+
+                                            <ul>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border border-3 border-dark w-50">
+                                                    <div>
+                                                        <div class="fw-bold">Ime1</div>
+                                                        <div class="text-muted">ime1@gmail.com</div>
+                                                    </div>
+                                                    <div>
+                                                        <button  name="prejemnik" value="izberi" class="btn1 btn btn-link btn-rounded btn-success text-light" >Izberi</button>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border border-3 border-dark w-50">
+                                                    <div>
+                                                        <div class="fw-bold">Ime2</div>
+                                                        <div class="text-muted">ime2@gmail.com</div>
+                                                    </div>
+                                                    <div>
+                                                        <button  name="prejemnik" value="izberi" class="btn1 btn btn-link btn-rounded btn-success text-light" >Izberi</button>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center border border-3 border-dark w-50">
+                                                    <div>
+                                                        <div class="fw-bold">Ime3</div>
+                                                        <div class="text-muted">ime3@gmail.com</div>
+                                                    </div>
+                                                    <div>
+                                                        <button name="prejemnik" value="izberi" class="btn1 btn btn-link btn-rounded btn-success text-light" >Izberi</button>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <script>
+                                                btns = document.getElementsByClassName("btn1");
+                                                for (var i = 0; i < btns.length; i++) {
+                                                    const btn = btns[i];
+                                                    btn.addEventListener("click", function (e) {
+                                                        e.preventDefault();
+                                                        if (btn.innerHTML.includes('Izberi')){
+                                                            btn.className="btn btn-link btn-rounded btn-danger text-light"
+                                                            btn.innerHTML = 'Odstrani';
+                                                            btn.value="odstrani";
+
+                                                        } else {
+                                                            btn.innerHTML = 'Izberi';
+                                                            btn.className="btn btn-link btn-rounded btn-success text-light";
+                                                            btn.value="izberi";
+                                                        }
+                                                    });
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="potek-casovnika" class="zamik">
+                    <h5>Potek časovnika</h5>
+                    <p>
+                        Časovnik (timer oz. countdown) morate ponastaviti znotraj spodaj določenega časovnega intervala, sicer šteje, da je ta pogoj izpolnjen.
+                        Na tak način lahko nastavite sprožitev na določen datum v prihodnosti.
+
+                        Fillmore Graves vam določen čas pred iztekom časovnika pošlje sporočilo na vaš elektronski naslov,
+                        v katerem se nahaja povezava, s katero ponastavite časovnik.
+                    </p>
+                    <div id="potek-casovnika-body">
+                        <input type="checkbox" class="ml-4 odmik" name = "dogodek" value = "po nekem dolocenem casu"/>
+                        Pogoj se izpolni ob poteku časovnika
+                        <div id="potek-casovnika-nastavitve" class="zamik">
+                            <div id="potek-casovnika-nastavitve-potek">
+                                Časovnik poteče po
+                                <input type="number" size="4" min="0" max="10" placeholder="L"/> letih
+                                <input type="number" size="4" min="0" max="11" placeholder="M"/> mesecih
+                                <input type="number" size="3" min="0" max="29" placeholder="D"/> dneh
+                                moje neaktivnosti.
+                                <span class="vprasaj" title="1 leto = 365 dni
+1 mesec = 30 dni
+Skupaj mora biti do poteka časovnika vsaj en dan">(?)</span>
+                            </div>
+                            <div id="potek-casovnika-nastavitve-sporocilo">
+                                Na elektronski naslov bo poslano sporočilo za ponastavitev
+                                <input type="number" size="4" min="0" max="10" placeholder="L"/> leta
+                                <input type="number" size="4" min="0" max="11" placeholder="M"/> mesecev
+                                <input type="number" size="3" min="0" max="29" placeholder="D"/> dni
+                                pred iztekom časovnika.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gumb-velik">
+            <button type="submit" class="btn btn-secondary btn-lg">
+                Ustvari sprožilec
+            </button>
+        </div>
+    </form>
+</div>
+<div id="footer"></div>
+<script>
+    function skrijOdkrij1() {
+        let element = document.getElementById("dolocen-dogodek-body");
+
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+
+    function skrijOdkrij2() {
+        let element = document.getElementById("verifikacija-s-strani-navadnega-uporabnika-body");
+
+        if (element.style.display === "none") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

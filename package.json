@@ -1,0 +1,32 @@
+{
+  "scripts": {
+    "start": "node app.js",
+    "postavitev": "npm run start_new_docker && npm run db_import_data",
+    "postavitev_unix": "npm run start_new_docker && npm run db_import_data_unix",
+    "start_new_docker": "docker-compose down --rmi all && docker-compose up --detach",
+    "db_import_data": "docker cp ./data/administratorji.json sp-mongo-db:/administratorji.json && docker cp ./data/dokumenti-tipi.json sp-mongo-db:/dokumenti-tipi.json && docker cp ./data/dokumenti.json sp-mongo-db:/dokumenti.json && docker cp ./data/navadni-uporabniki.json sp-mongo-db:/navadni-uporabniki.json && docker cp ./data/sprozilci.json sp-mongo-db:/sprozilci.json && winpty docker exec -it sp-mongo-db mongoimport --db LP16 --collection Administratorji --mode upsert --upsertFields id --jsonArray --file administratorji.json && winpty docker exec -it sp-mongo-db mongoimport --db LP16 --collection Navadni_uporabniki --mode upsert --upsertFields id --jsonArray --file navadni-uporabniki.json && winpty docker exec -it sp-mongo-db mongoimport --db LP16 --collection Dokumenti --mode upsert --upsertFields id --jsonArray --file dokumenti.json && winpty docker exec -it sp-mongo-db mongoimport --db LP16 --collection Sprozilci --mode upsert --upsertFields id --jsonArray --file sprozilci.json && winpty docker exec -it sp-mongo-db mongoimport --db LP16 --collection Tipi_dokumentov --mode upsert --upsertFields id --jsonArray --file dokumenti-tipi.json && winpty docker exec -it sp-mongo-db rm -rf administratorji.json && winpty docker exec -it sp-mongo-db rm -rf navadni-uporabniki.json && winpty docker exec -it sp-mongo-db rm -rf dokumenti.json && winpty docker exec -it sp-mongo-db rm -rf sprozilci.json && winpty docker exec -it sp-mongo-db rm -rf dokumenti-tipi.json",
+    "db_import_data_unix": "docker cp ./data/administratorji.json sp-mongo-db:/administratorji.json && docker cp ./data/dokumenti-tipi.json sp-mongo-db:/dokumenti-tipi.json && docker cp ./data/dokumenti.json sp-mongo-db:/dokumenti.json && docker cp ./data/navadni-uporabniki.json sp-mongo-db:/navadni-uporabniki.json && docker cp ./data/sprozilci.json sp-mongo-db:/sprozilci.json && docker exec -it sp-mongo-db mongoimport --db LP16 --collection Administratorji --mode upsert --upsertFields id --jsonArray --file administratorji.json && docker exec -it sp-mongo-db mongoimport --db LP16 --collection Navadni_uporabniki --mode upsert --upsertFields id --jsonArray --file navadni-uporabniki.json && docker exec -it sp-mongo-db mongoimport --db LP16 --collection Dokumenti --mode upsert --upsertFields id --jsonArray --file dokumenti.json && docker exec -it sp-mongo-db mongoimport --db LP16 --collection Sprozilci --mode upsert --upsertFields id --jsonArray --file sprozilci.json && docker exec -it sp-mongo-db mongoimport --db LP16 --collection Tipi_dokumentov --mode upsert --upsertFields id --jsonArray --file dokumenti-tipi.json && docker exec -it sp-mongo-db rm -rf administratorji.json && docker exec -it sp-mongo-db rm -rf navadni-uporabniki.json && docker exec -it sp-mongo-db rm -rf dokumenti.json && docker exec -it sp-mongo-db rm -rf sprozilci.json && docker exec -it sp-mongo-db rm -rf dokumenti-tipi.json",
+    "db_open_terminal": "winpty docker exec -it sp-mongo-db mongosh",
+    "db_open_terminal_unix": "docker exec -it sp-mongo-db mongosh",
+    "db_atlas_open_terminal_unix": "docker exec -it sp-mongo-db bash -c \"mongosh \\\"mongodb+srv://aplikacija.a4yfl1a.mongodb.net/\\\" --username dbdostop\"",
+    "db_local_dump_unix": "docker exec -it sp-mongo-db bash -c \"mongodump -h localhost -d LP16 -o ./\"",
+    "db_restore_to_atlas_administratorji_unix": "docker exec -it sp-mongo-db bash -c \"mongorestore --drop --uri mongodb+srv://dbdostop@aplikacija.a4yfl1a.mongodb.net ./LP16/Administratorji.bson\"",
+    "db_restore_to_atlas_dokumenti_unix": "docker exec -it sp-mongo-db bash -c \"mongorestore --drop --uri mongodb+srv://dbdostop@aplikacija.a4yfl1a.mongodb.net ./LP16/Dokumenti.bson\"",
+    "db_restore_to_atlas_navadni_uporabniki_unix": "docker exec -it sp-mongo-db bash -c \"mongorestore --drop --uri mongodb+srv://dbdostop@aplikacija.a4yfl1a.mongodb.net ./LP16/Navadni_uporabniki.bson\"",
+    "db_restore_to_atlas_sprozilci_unix": "docker exec -it sp-mongo-db bash -c \"mongorestore --drop --uri mongodb+srv://dbdostop@aplikacija.a4yfl1a.mongodb.net ./LP16/Sprozilci.bson\"",
+    "db_restore_to_atlas_tipi_dokumentov_unix": "docker exec -it sp-mongo-db bash -c \"mongorestore --drop --uri mongodb+srv://dbdostop@aplikacija.a4yfl1a.mongodb.net ./LP16/Tipi_dokumentov.bson\""
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "multer": "^1.4.5-lts.1",
+    "npm": "^9.1.3",
+    "swagger-jsdoc": "^6.2.5",
+    "swagger-ui-express": "^4.6.0",
+    "utf8-encoder": "^1.0.1"
+  }
+}

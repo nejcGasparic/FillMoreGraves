@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Nov navadni uporabnik</title>
+
+	<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+	/>
+	<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+	></script>
+	<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+	></script>
+	<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+	></script>
+	<link rel="stylesheet" href="../styles/styles.css" />
+	<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+	/>
+	<script src="../js/main.js" defer></script>
+</head>
+<body>
+<div id="header"></div>
+<div id="telo" class="mx-5">
+	<h3 class="odmik">Nov navadni uporabnik</h3>
+	<form>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label class="font-weight-bold">Ime</label>
+				<input type="text" class="form-control" placeholder="Primož" />
+			</div>
+			<div class="form-group col-md-4">
+				<label class="font-weight-bold">Priimek</label>
+				<input type="text" class="form-control" placeholder="Roglič" />
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+				<label class="font-weight-bold">Elektronski naslov</label>
+				<input
+						type="email"
+						class="form-control"
+						placeholder="kolesar@gmail.com"
+				/>
+			</div>
+			<div class="form-group col-md-4">
+				<label class="font-weight-bold">Geslo</label>
+				<input
+						type="password"
+						class="form-control"
+						placeholder="********"
+				/>
+			</div>
+		</div>
+		<p>
+			Vloge so uporabniku dodeljene avtomatsko.
+			Če je uporabniku podeljen dostop do kateregakoli dokumenta, mu bo dodana vloga privilegiranega uporabnika.
+			Če ga katerakoli sprožilec pooblašča za verifikacijo dejstev, mu bo dodeljena vloga verifikatorja.
+		</p>
+	</form>
+	<div class="gumb-velik">
+		<button type="button" class="btn btn-secondary btn-lg">
+			Ustvari navadnega uporabnika
+		</button>
+	</div>
+</div>
+<div id="footer"></div>
+</body>
+</html>

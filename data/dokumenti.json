@@ -1,0 +1,45 @@
+[
+  {
+    "id_administratorja": "639e59d156343bf974971be9",
+    "ime": "Oporoka",
+    "opis": "Oporoka Janeza Novaka III.",
+    "zapisek": "Ta dokument je oporoka gospoda Janeza Novaka, rojenega 24.2.1990...",
+    "id_tipa": 1,
+    "datoteka": null,
+    "izbrani_sprozilci": [
+      1,3
+    ],
+    "izbrani_prejemniki": [
+      "2639f69e0182470756ce1458f"
+    ]
+  },
+  {
+    "id_administratorja": "639e59d156343bf974971be9",
+    "ime": "Najemna pogodba",
+    "opis": "Najemna pogodba za stanovanje",
+    "zapisek": "Najemna pogodba za stanovanje na Cankarjevi ulici 24, Ljubljana.",
+    "id_tipa": 1,
+    "datoteka": null,
+    "izbrani_sprozilci": [
+      1,4
+    ],
+    "izbrani_prejemniki": [
+      "2639f69e0182470756ce1458f",
+      "639f69e0182470756ce14590"
+    ]
+  },
+  {
+    "id_administratorja": "639e59d156343bf974971be9",
+    "ime": "Račun",
+    "opis": "Račun za avto",
+    "zapisek": "Račun za avto Renault Clio, letnik 2001",
+    "id_tipa": 1,
+    "datoteka": null,
+    "izbrani_sprozilci": [
+      2,3
+    ],
+    "izbrani_prejemniki": [
+      "639f69e0182470756ce14591"
+    ]
+  }
+]

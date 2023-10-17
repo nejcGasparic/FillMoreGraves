@@ -1,0 +1,44 @@
+[
+  {
+    "id_administratorja": "639e59d156343bf974971be9",
+    "ime": "Shema sproženja 1",
+    "pogoji": {
+      "tragicni_dogodki": {
+        "izbrano": true,
+        "verifikacija": {
+          "osmrtnice_si": {
+            "izbrano": true
+          },
+          "potrditev_navadnega_uporabnika": {
+            "izbrano": false,
+            "casovnika": {
+              "leta": 0,
+              "meseci": 0,
+              "dnevi": 0
+            },
+            "sporocilo": {
+              "leta": 0,
+              "meseci": 0,
+              "dnevi": 0
+            },
+            "verifikatorji": 0
+          }
+        }
+      },
+      "potek_intervala": {
+        "izbrano": 1,
+        "casovnika": {
+          "leta": 2022,
+          "meseci": 12,
+          "dnevi": 25
+        },
+        "sporocilo": {
+          "leta": 0,
+          "meseci": 0,
+          "dnevi": 1
+        },
+        "verifikatorji": [1, 2]
+      }
+    }
+  }
+]

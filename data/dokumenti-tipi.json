@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "ime": "Datoteka",
+    "opis": "npr. oporoka, izpis zemljiške knjige, slike, itd."
+  },
+  {
+    "id": 2,
+    "ime": "Poverilnice za prijavo (login credentials)",
+    "opis": "lokacija (npr. URL), uporabniško ime in geslo"
+  },
+  {
+    "id": 3,
+    "ime": "Bančni račun",
+    "opis": "številka TRR"
+  },
+  {
+    "id": 4,
+    "ime": "Zavarovalna polica",
+    "opis": "številka zavarovalne police"
+  },
+  {
+    "id": 5,
+    "ime": "Sef",
+    "opis": "kombinacija in lokacija sefa"
+  },
+  {
+    "id": 6,
+    "ime": "Predmet",
+    "opis": "lokacija predmeta na zemljevidu: npr. nahajališče dragocenega predmeta, denarja, itd."
+  }
+]

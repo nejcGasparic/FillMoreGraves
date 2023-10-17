@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registracija</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+        rel="stylesheet"
+        href="../styles/styles.css"
+    />
+    <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+        crossorigin="anonymous" 
+        referrerpolicy="no-referrer" 
+    />
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="/">Fillmore Graves</a>
+
+    <ul class="navbar-nav ml-auto">
+        <li>
+            <a href="prijava.html" class="btn btn-outline bg-light text-dark float-right">Prijava</a>
+        </li>
+    </ul>
+
+    </div>
+</nav>
+<div id="telo" class="card mx-auto">
+    <div class="card-header d-flex justify-content-center">
+        <h5>
+            <strong>Registracija</strong>
+        </h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label>Ime</label>
+                <input type="text" class="form-control" placeholder="Janez">
+            </div>
+            <div class="form-group">
+                <label>Priimek</label>
+                <input type="text" class="form-control" placeholder="Novak">
+            </div>
+            <div class="form-group">
+                <label>Elektronski naslov</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="ime.priimek@ponudnik.si">
+            </div>
+            <div class="form-group">
+                <label>Geslo</label>
+                <input type="password" class="form-control" placeholder="Vsaj osem alfanumeričnih znakov">
+                <small class="form-text text-muted">Geslo mora biti dolgo vsaj 8 znakov in vsebovati vsaj eno veliko in eno malo črko ter vsaj eno številko</small>
+            </div>
+
+            <p>
+                <button type="submit" class="btn btn-outline bg-dark text-light float-right">Ustvari račun</button>
+            </p>
+        </form>
+    </div>
+</div>
+<footer id="footer" class="bg-dark text-light">
+    <div id="footer-text" class="text-center p-3">
+        © 2022 Copyright Fillmore Graves
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+#telo {
+    padding-bottom: 56px; /* skupaj z min-height poskrbi, da noga ne prekriva vsebine*/
+    margin: 30px 0px 30px 0px;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 56px;
+}
+
+#footer-text {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#obrazec-naslov-nov {
+    padding-bottom: 25px
+}
+
+.vprasaj {
+    color:grey
+}
+
+.gumb-velik {
+    padding-top: 30px;
+}
+
+.zamik {
+    margin-left: 30px;
+}
+
+.zamik2 {
+    margin-left: 60px;
+}
+
+.odmik {
+    margin-bottom: 20px;
+}
+
+/* db */
+#db {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+#db>a {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+#db>a.btn-info {
+    margin-right: 15px;
+}
+#db>a.btn-danger {
+    margin-left: 15px;
+}
+
+/* verifikcija.html */
+#dejstvo {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+}
+
+/* kartice */
+.card {
+    width: 30rem; margin: 60px;
+}
+
+@media only screen and (max-height: 587px) {
+    #footer {
+      position: relative !important;
+      margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #db {
+        flex-direction: column;
+    }
+    #db>a {
+        font-size: 1.3rem;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-top: 15px;
+    }
+}
